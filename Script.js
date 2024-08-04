@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(type, 500); // Pause before typing the next word
         } else {
             setTimeout(erase, 50); // Erase speed
-        }
+        } 
     }
 
 
