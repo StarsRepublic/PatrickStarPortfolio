@@ -11,6 +11,16 @@ text-decoration: none;
 
 }
 
+/* 
+Colors to use:
+Black - #0B0C10
+GRAY - #1F2833
+LIGHTGRAY - #C5C6C7
+NEONBLUE - #66FCF1
+DARKISH BLUE - #45A29E
+
+*/
+
 /*navbar styling */
 .max-width {
     max-width: 1300px;
@@ -18,7 +28,7 @@ text-decoration: none;
     margin: auto;
 }
 .navbar {
-    background: #000;
+    background: #45A29E;
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -75,12 +85,36 @@ section .text {
 
 .home {
     display: flex;
-    background: url('MainPhoto.jpg') no-repeat center; 
-    background-size: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     height: 100vh;
-    color: #fff;
+    color: #0B0C10;
     min-height: 500px;
     font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('MainPhoto.jpg') no-repeat center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
 }
 .home .max-width{
     margin: auto 0 auto 40px;
@@ -98,6 +132,86 @@ section .text {
     margin: 5px 0;
     font-weight: 500;
 }
+
+/* Loader */
+/* From Uiverse.io by mobinkakei */ 
+.loader {
+    position: relative;
+    width: 128px;
+    height: 58px; /* Added height to define the background area */
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: #45A29E; /* Change this to the desired background color */
+    border-radius: 30px; /* Optional: To give the background rounded corners */
+    padding: 10px; /* Optional: To add some spacing inside the loader */
+    margin: 50px auto; /* Center the loader and add vertical margin */
+}
+.loader::after,
+.loader::before {
+    content: "";
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    background-image: radial-gradient(circle 14px, #0d161b 100%, transparent 0);
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    animation: eyeMove 10s infinite, blink 10s infinite;
+}
+@keyframes eyeMove {
+    0%,
+    10% {
+        background-position: 0px 0px;
+    }
+    13%,
+    40% {
+        background-position: -15px 0px;
+    }
+    43%,
+    70% {
+        background-position: 15px 0px;
+    }
+    73%,
+    90% {
+        background-position: 0px 15px;
+    }
+    93%,
+    100% {
+        background-position: 0px 0px;
+    }
+}
+@keyframes blink {
+    0%,
+    10%,
+    12%,
+    20%,
+    22%,
+    40%,
+    42%,
+    60%,
+    62%,
+    70%,
+    72%,
+    90%,
+    92%,
+    98%,
+    100% {
+        height: 48px;
+    }
+    11%,
+    21%,
+    41%,
+    61%,
+    71%,
+    91%,
+    99% {
+        height: 18px;
+    }
+}
+
+  
+
 
 /* About section*/
 .about {
@@ -461,3 +575,7 @@ footer p{
     color: skyblue;
     text-align: center;
 }
+
+
+
+
