@@ -33,4 +33,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     type(); // Start typing
+
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const titles = document.querySelectorAll(".project-title");
+
+    titles.forEach(title => {
+        let fontSize = parseInt(window.getComputedStyle(title).fontSize);
+
+        while (title.scrollWidth > title.clientWidth && fontSize > 12) {
+            fontSize--;
+            title.style.fontSize = fontSize + "px";
+        }
+    });
 });
