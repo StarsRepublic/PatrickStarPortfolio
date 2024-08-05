@@ -534,6 +534,9 @@ section .text {
     border: 4px solid transparent;
     cursor: pointer;
     background-color: white;
+    margin-bottom: 40px; /* Adjusted from 50px to 20px */
+    margin-right: auto; /* Added to reduce space between cards horizontally */
+    margin-left: auto;
   }
   
   .article-wrapper:hover {
@@ -587,7 +590,7 @@ section .text {
   }
   
   .project-title {
-    font-size: 2em;
+    font-size: 30px;
     margin: 0;
     font-weight: 600;
    /* depend de la font */
